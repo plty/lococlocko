@@ -23,12 +23,12 @@
   </head>
   <body class="bg-gray-900">
     <div
-      class="flex flex-col items-center"
+      class="flex flex-col h-screen items-center justify-center"
       x-data="{ date: new Date() }"
       x-init="setInterval(() => (date = new Date()), 500)"
     >
       <div
-        class="text-9xl text-red-800 m-4"
+        class="text-9xl text-red-800 pt-4"
         style="font-family: 'Courier Prime', monospace"
         x-text="`${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`"
       ></div>

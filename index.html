@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>loco-clocko</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- Place favicon.ico in the root directory -->
+
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-900">
+    <div
+      class="flex flex-col items-center"
+      x-data="{ date: new Date() }"
+      x-init="setInterval(() => (date = new Date()), 500)"
+    >
+      <div
+        class="text-9xl text-gray-100 m-4"
+        style="font-family: 'Courier Prime', monospace"
+        x-text="`${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`"
+      ></div>
+    </div>
+  </body>
+</html>
